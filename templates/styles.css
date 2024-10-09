@@ -1,0 +1,89 @@
+/* Body styling with background image and alignment */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 100px;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #333; /* Darker text color for better contrast */
+}
+
+/* Flexbox container for responsive alignment */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Add slight opacity for better text contrast */
+    padding: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Haiku display box styling */
+/* Preformatted text (for Haiku display) */
+.haiku-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Styling for the fade-in animation for the headings */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+
+/* Fade-in animation keyframes */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive design: ensuring the layout adjusts on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        width: 90%; /* Slightly wider for smaller screens */
+    }
+
+    .haiku-box {
+        font-size: 16px; /* Slightly smaller text for smaller screens */
+        padding: 15px; /* Adjust padding for better fit */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce size of heading on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px; /* Smaller button text on very small screens */
+    }
+
+    .haiku-box {
+        font-size: 14px; /* Further reduce font size on small screens */
+    }
+}

@@ -1,0 +1,99 @@
+/* Body styling with background image and alignment */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #333; /* Darker text color for better contrast */
+}
+
+/* Flexbox container for responsive alignment */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 600px;
+    margin: 0 auto; /* Center horizontally */
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Haiku display box styling */
+.haiku-box {
+    background-color: #ffebf2; /* Light pink background for the haiku box */
+    padding: 20px;
+    border-radius: 5px;
+    color: #333; /* Dark text for contrast */
+    font-size: 18px;
+    font-family: 'Georgia', serif; /* More elegant font for poetry */
+    text-align: justify; /* Justify the text within the haiku box */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px; /* Ensures haiku box doesn't get too wide */
+    word-wrap: break-word; /* Breaks long words to fit in the container */
+}
+
+/* Styling for the fade-in animation for the headings */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+
+/* Fade-in animation keyframes */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive design: ensuring the layout adjusts on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        width: 90%; /* Slightly wider for smaller screens */
+    }
+
+    .haiku-box {
+        font-size: 16px; /* Slightly smaller text for smaller screens */
+        padding: 15px; /* Adjust padding for better fit */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce size of heading on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px; /* Smaller button text on very small screens */
+    }
+
+    .haiku-box {
+        font-size: 14px; /* Further reduce font size on small screens */
+    }
+}

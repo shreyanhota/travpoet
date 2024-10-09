@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravPoet</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="/static/logo.png" alt="Logo" class="logo-img"> <!-- Add your logo here -->
+            <h1 class="logo-text">TRAVAI</h1>
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1 class="fade-in">I just learned Poetry. I am 1 hour old.</h1>
+        <form method="POST">
+            <button type="submit" class="btn">Test my Poem</button>
+        </form>
+        {% if haiku %}
+            <h2 class="fade-in">I'm learning Haiku</h2>
+            <pre class="haiku-box">{{ haiku }}</pre>
+        {% endif %}
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2024 TRAVAI. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <p>Contact us at info@travai.com</p>
+        </div>
+    </footer>
+</body>
+</html>

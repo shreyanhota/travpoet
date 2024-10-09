@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravPoet</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>I just learned Poetry. I am 1 hour old.</h1>
+    <form method="POST">
+        <button type="submit">Test my Poem</button>
+    </form>
+    {% if haiku %}
+        <h2>I'm learning Haiku</h2>
+        <pre>{{ haiku }}</pre>
+    {% endif %}
+</body>
+</html>

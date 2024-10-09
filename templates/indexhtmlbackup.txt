@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravPoet</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="fade-in">I just learned Poetry. I am 1 hour old.</h1>
+        <form method="POST">
+            <button type="submit" class="btn">Test my Poem</button>
+        </form>
+        {% if haiku %}
+            <h2 class="fade-in">I'm learning Haiku</h2>
+            <pre class="haiku-box">{{ haiku }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
+

@@ -1,4 +1,5 @@
-Flask
+
 torch
 transformers
-gunicorn
+
+gradio

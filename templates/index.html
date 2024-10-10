@@ -4,71 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Wai's Vocabulary</title>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
         <div class="logo">
-            <img src="/static/logo.png" alt="Logo" class="logo-img">
-            <span class="logo-text">W.A.I.</span>
+            <!--img src="/static/logo.png" alt="Logo" class="logo-img"> <!-- Add your logo here -->
+            <h1 class="logo-text">W.A.I.</h1>
         </div>
-        <!-- <nav class="nav"> -->
-            <!-- <a href="#" class="nav-link">Home       </a> -->
-        <!-- </nav> -->
+        <!--nav class="nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+        </nav-->
     </div>
 
-    <!-- Main Content Container -->
     <div class="container">
+		<div class="container">
         <!-- This will dynamically calculate the hours since October 11, 2024 -->
-        <h1 class="fade-in" id="age-text">Calculating age...</h1>
-		<h2 class="fade-in">I can speak English.</h2>
-		
+        <h1 class="fade-in">I'm Wai. I can write you a caption.</h1>
         <form method="POST">
+			<input type="text" name="tone" placeholder="Tone (e.g., adventurous, educational)" required>
+			<input type="text" name="theme" placeholder="Theme (e.g., bustling, vibrant)" required>
+            <input type="text" name="location" placeholder="Location (e.g., beach, mountain)" required>
+            
             <button type="submit" class="btn">Test my Vocabulary</button>
         </form>
-        {% if haiku %}
+
+        {% if caption %}
             <h2 class="fade-in">Here I Go...</h2>
-            <pre class="haiku-box">{{ haiku }}</pre>
+            <p>{{ caption }}</p>
         {% endif %}
-		<h2 class="fade-in">I am also learning Thai.</h2>
+		<h1 class="fade-in">I am also learning Thai.</h1>
+    </div>
+	<div class="button-group">
+        <button class="btn" onclick="window.location.reload();">Another One!</button>
+        <button class="btn" onclick="window.location.reload();">I like it!</button>
+        <button class="btn" onclick="window.location.reload();">Needs work!</button>
     </div>
 
-    <!-- Buttons below container -->
-    <div class="button-group">
-        <button class="btn" onclick="window.location.reload();">Regenerate</button>
-        <button class="btn">I like it!</button>
-        <button class="btn">Needs work!</button>
-    </div>
-
-    <!-- Footer -->
+   <!-- Footer Section -->
     <div class="footer">
         <div class="footer-left">
-            &copy; 2024 TravAI
+            <p>© 2024 TRAVAI. All rights reserved.</p>
         </div>
-        
+        <div class="footer-right">
+            <p>Contact - shreyanhota@travai.fun</p>
+        </div>
     </div>
-	
-	<!-- Script to calculate and update hours since 12:00 AM 11th October 2024 -->
-    <script>
-        function calculateAge() {
-            const startDate = new Date('2024-10-11T00:00:00');
-            const currentDate = new Date();
-
-            // Calculate the difference in milliseconds
-            const diff = currentDate - startDate;
-
-            // Convert milliseconds to hours
-            const diffHours = Math.floor(diff / (1000 * 60 * 60));
-
-            // Update the h1 element with the calculated age
-            document.getElementById('age-text').innerText = `Hi, I am Wai. I came to be ${diffHours} hours old.`;
-        }
-
-        // Call the function on page load
-        calculateAge();
-    </script>
-	
 </body>
 </html>
+

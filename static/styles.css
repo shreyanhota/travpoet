@@ -1,138 +1,107 @@
-/* Body styling with background image and alignment */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0; /* Remove default body margin */
-    height: 100vh; /* Full viewport height */
+    font-family: 'Arial', sans-serif;
+    background: url('/static/background.jpg') center center/cover no-repeat; /* Background image */
+	background-color: black;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    background-image: url('/static/background.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    min-height: 100vh; /* Ensure body takes full height */
 }
 
-/* Header Styling */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.9);/* Light white background with slight transparency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
-    color: rgba(0, 0, 0, 0.1);
+.header, .footer {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px; /* Spacing between logo and text */
-}
-
-.logo-text {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav {
-    display: flex;
-	margin-right: 20px;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-}
-
-.nav-link:hover {
-    text-decoration: underline;
-}
-
-/* Footer Styling */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Center container within available space */
-.container {
-    background-color: rgba(0, 0, 0, 0.7); /* Add slight opacity for better text contrast */
     padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: fade-in 2s ease-in-out;
-    margin: auto; /* Center container vertically and horizontally */
-    max-width: 80%; /* Make sure it doesn't take up too much width */
-    margin-top: 100px; /* Space below the fixed header */
-    margin-bottom: 60px; /* Space above the fixed footer */
+    background-color: black; /* Light white opacity */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks header to the top */
 }
 
-/* Button styling */
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+.footer {
+    position: relative; /* Allows footer to stay at bottom */
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.container {
+    text-align: center;
+	color: white;
+    padding: 20px;  /* Added padding for better spacing */
+    flex: 1; /* Allows the container to take available space */
+	background-color: black; /* Light pink with 50% opacity */
+}
+
+form {
+    margin: 20px 0; /* Added margin to separate the form from other elements */
+}
+
+input[type="text"] {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
     border-radius: 5px;
+    width: 250px; /* Fixed width for input fields */
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white; /* light blue background */
+    color: white; /* White text */
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 0 10px; /* Spacing between buttons */
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
 }
 
-/* Preformatted text (for Haiku display) */
-.haiku-box {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    color: #333;
-    font-size: 18px;
-	font-family: 'Georgia', serif; /* More elegant font for poetry */
-    text-align: justify; /* Justify the text within the haiku box */
-    margin-top: 20px;
-    width: 100%;
-    max-width: 1000px; /* Ensures haiku box doesn't get too wide */ 
-    word-wrap: break-word; /* Breaks long words to fit in the container */
-}
 
-/* Fade-in animation */
+
+
+/* Styling for the fade-in animation for the headings */
 .fade-in {
     opacity: 0;
     animation: fade-in 2s forwards;
 }
 
-/* Animation keyframes */
+/* Fade-in animation keyframes */
 @keyframes fade-in {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Responsive design: ensuring the layout adjusts on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        width: 90%; /* Slightly wider for smaller screens */
+    }
+
+    .container {
+        font-size: 16px; /* Slightly smaller text for smaller screens */
+        padding: 15px; /* Adjust padding for better fit */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce size of heading on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px; /* Smaller button text on very small screens */
+    }
+
+    .container {
+        font-size: 14px; /* Further reduce font size on small screens */
     }
 }

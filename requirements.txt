@@ -1,6 +1,3 @@
-
-torch
-transformers
-gunicorn
-flask
-gradio
+Flask==2.3.3
+torch==2.0.0
+transformers==4.29.0

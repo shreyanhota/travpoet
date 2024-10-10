@@ -18,8 +18,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Slight opacity for contrast */
-    color: white;
+    background-color: rgba(255, 255, 255, 0.9);/* Light white background with slight transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    color: rgba(0, 0, 0, 0.1);
     width: 100%;
     position: fixed;
     top: 0;
@@ -106,4 +107,32 @@ body {
 }
 
 /* Preformatted text (for Haiku display) */
-.ha
+.haiku-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 18px;
+	font-family: 'Georgia', serif; /* More elegant font for poetry */
+    text-align: justify; /* Justify the text within the haiku box */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px; /* Ensures haiku box doesn't get too wide */ 
+    word-wrap: break-word; /* Breaks long words to fit in the container */
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

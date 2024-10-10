@@ -1,0 +1,109 @@
+/* Body styling with background image and alignment */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0; /* Remove default body margin */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    background-image: url('/static/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Slight opacity for contrast */
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* Spacing between logo and text */
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+	margin-right: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Center container within available space */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Add slight opacity for better text contrast */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fade-in 2s ease-in-out;
+    margin: auto; /* Center container vertically and horizontally */
+    max-width: 80%; /* Make sure it doesn't take up too much width */
+    margin-top: 100px; /* Space below the fixed header */
+    margin-bottom: 60px; /* Space above the fixed footer */
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 10px; /* Spacing between buttons */
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Preformatted text (for Haiku display) */
+.ha

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-image: url('/static/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* Container for centering content */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Add slight opacity for better text contrast */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Preformatted text (for Haiku display) */
+.haiku-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 18px;
+	font-family: 'Georgia', serif; /* More elegant font for poetry */
+    text-align: justify; /* Justify the text within the haiku box */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px; /* Ensures haiku box doesn't get too wide */ 
+    word-wrap: break-word; /* Breaks long words to fit in the container */
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('/static/background.jpeg') center center/cover no-repeat; /* Background image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+.header, .footer {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light white opacity */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks header to the top */
+}
+
+.footer {
+    position: relative; /* Allows footer to stay at bottom */
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;  /* Added padding for better spacing */
+    flex: 1; /* Allows the container to take available space */
+}
+
+form {
+    margin: 20px 0; /* Added margin to separate the form from other elements */
+}
+
+input[type="text"] {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    width: 250px; /* Fixed width for input fields */
+}
+
+.btn {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+h1, h2 {
+    margin: 10px 0; /* Added margin to headings for spacing */
+}
+
+p {
+    margin: 10px 0; /* Added margin to paragraphs for spacing */
+}

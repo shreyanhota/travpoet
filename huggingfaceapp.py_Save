@@ -1,0 +1,52 @@
+import gradio as gr
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+# Load the model and tokenizer
+model_name = "gpt2"
+model = GPT2LMHeadModel.from_pretrained(model_name)
+tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+
+def generate_caption(tone, location, theme):
+    # Merge prompts into a single prompt
+    prompt = f"A {tone} trip to the {location} {theme} is"
+    
+    
+ #   responses = []
+
+    inputs = tokenizer.encode(prompt, return_tensors="pt")
+    outputs = model.generate(inputs, max_length=50, num_return_sequences=1, 
+                             no_repeat_ngram_size=2, do_sample=True, top_p=0.95, temperature=0.7)
+    sentence = tokenizer.decode(outputs[0], skip_special_tokens=True)
+  #  responses.append(sentence.strip())
+# Generate text
+
+
+    if "." in sentence:
+        caption = f'"{caption[:caption.index(".") + 1]}"'  # Include the full stop
+    else:
+        caption = sentence  # Fallback if no period is found
+
+    return caption
+
+# Create the Gradio interface
+
+
+interface = gr.Interface(
+    fn=generate_response,
+    inputs=[
+        gr.inputs.Radio(["solo", "family", "business"], label="Choose Persona"),
+        gr.inputs.Radio(["shoestring", "mid", "high"], label="Choose Budget"),
+        gr.inputs.Radio(["now", "a little later", "in the future"], label="When?")
+    ],
+    outputs=[
+        gr.outputs.Textbox(label="Selected Options"),
+        gr.outputs.Textbox(label="GPT-2 Generated Sentence 1"),
+        gr.outputs.Textbox(label="GPT-2 Generated Sentence 2"),
+        gr.outputs.Textbox(label="GPT-2 Generated Sentence 3")
+    ],
+    title="Carousel Input Example with GPT-2",
+    live=True,
+)
+
+if __name__ == "__main__":
+    interface.launch()
